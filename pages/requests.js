@@ -32,7 +32,8 @@ const MainRequests = ({manager}) => {
             recipient: ele?.recipient,
             voters: parseInt(ele ?.noOfVoters),
             requestaddress: ele?.image,
-            completed: ele?.completed
+            completed: ele?.completed,
+            
           }
         })
         
@@ -62,9 +63,9 @@ const MainRequests = ({manager}) => {
         <Navbar manager={manager} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center mb-20 w-full gap-3 mx-auto">
 
-          {Array?.map((ele) => {
+          {Array?.map((ele,i) => {
             return (
-              <Card title={ele?.title} amount={ele?.amount} story={ele.story} voters={ele.voters} address={ele.recipient} image={ele.image} requestaddress={ele.requestaddress} />
+              <Card title={ele?.title} amount={ele?.amount} story={ele.story} voters={ele.voters} address={ele.recipient} image={ele.image} requestaddress={ele.requestaddress} key={i}/>
             )
 
           }
